@@ -43,15 +43,15 @@ public class ExampleTest {
                 .append("\n")
                 .toString();
         String expectedConsoleResult = new StringBuilder()
-                .append(userMessage.WELCOME_MES + "\n").toString();
+                .append(userMessage.WELCOME_MES).toString();
         ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 
         // When
-        BibliotecaApp.main(new String[] {});
+        BibliotecaApp.getMainMenu();
 
         // Then
-        assertEquals(userMessage.WELCOME_MES, outputBytes.toString());
+        assertEquals(expectedConsoleResult, outputBytes.toString());
     }
 
     @Test
@@ -67,7 +67,7 @@ public class ExampleTest {
         System.setIn(inputBytes);
 
         // When
-        BibliotecaApp.main(new String[] {});
+        BibliotecaApp.getMainMenu();
 
         // Then
         assertEquals(String.format(expectedConsoleResult), outputBytes.toString());
