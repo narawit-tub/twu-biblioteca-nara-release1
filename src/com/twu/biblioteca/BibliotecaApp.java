@@ -34,6 +34,10 @@ public class BibliotecaApp {
            switch (userInput) {
                case 1:
                    System.out.print(libary.showAListOfBooks());
+                   break;
+               case 2:
+                   System.out.print(libary.showAListOfBooksInDetail());
+                   break;
                default:
                    break;
            }
