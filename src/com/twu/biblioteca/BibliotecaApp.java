@@ -5,7 +5,9 @@ import java.util.Scanner;
 
 public class BibliotecaApp {
     public static void main(String[] args) {
-
+        Scanner in = new Scanner(System.in);
+        getMainMenu(in);
+        chooseOption(in);
     }
 
     public static void getMainMenu(Scanner in) {
@@ -24,7 +26,7 @@ public class BibliotecaApp {
 
     public static void chooseOption(Scanner in){
         ConsoleMessage userMessage = new ConsoleMessage();
-        int[] options = {1, 2, 3, 4};
+        Integer[] options = new Integer[] {1, 2, 3, 4};
 
         Integer userInput = Integer.parseInt(in.nextLine());
         if(Arrays.asList(options).contains(userInput)) {
