@@ -128,7 +128,18 @@ public class ExampleTest {
         String expectedConsoleResult = new StringBuilder()
                 .append(userMessage.WELCOME_MES)
                 .append(userMessage.OPTIONS_MES)
-                .append(libary.showAListOfBooks()).toString();
+                .append(userMessage.SHOW_A_LIST_OF_BOOKS_MES).toString();
+        ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
+        System.setIn(inputBytes);
+
+        // When
+        Scanner in = new Scanner(System.in);
+        BibliotecaApp.getMainMenu(in);
+        BibliotecaApp.chooseOption(in);
+
+        // Then
+        assertEquals(String.format(expectedConsoleResult), outputBytes.toString());
+    }
         ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 
