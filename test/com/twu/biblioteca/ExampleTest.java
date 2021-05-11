@@ -116,4 +116,28 @@ public class ExampleTest {
         // Then
         assertEquals(String.format(expectedConsoleResult), outputBytes.toString());
     }
+
+    @Test
+    public void ViewAListOfBooks(){
+        // Given
+        Libary libary = new Libary();
+        String userKeyboardInput = new StringBuilder()
+                .append("menu\n")
+                .append("1\n")
+                .toString();
+        String expectedConsoleResult = new StringBuilder()
+                .append(userMessage.WELCOME_MES)
+                .append(userMessage.OPTIONS_MES)
+                .append(libary.showAListOfBooks()).toString();
+        ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
+        System.setIn(inputBytes);
+
+        // When
+        Scanner in = new Scanner(System.in);
+        BibliotecaApp.getMainMenu(in);
+        BibliotecaApp.chooseOption(in);
+
+        // Then
+        assertEquals(String.format(expectedConsoleResult), outputBytes.toString());
+    }
 }
