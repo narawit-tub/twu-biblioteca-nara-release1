@@ -19,30 +19,37 @@ public class BibliotecaApp {
             if (!userInput.equals("")){
                 System.out.print(userMessage.ERROR_MES_REPEAT_USER_OPTION);
             }
-        } else {
-            System.out.print(userMessage.OPTIONS_MES);
         }
     }
 
     public static void chooseOption(Scanner in){
         ConsoleMessage userMessage = new ConsoleMessage();
-        Integer[] options = new Integer[] {1, 2, 3, 4};
+        String[] options = new String[] {"1", "2", "3", "4"};
         Libary libary = new Libary();
 
-        Integer userInput = Integer.parseInt(in.nextLine());
-        if(Arrays.asList(options).contains(userInput)) {
-           switch (userInput) {
-               case 1:
-                   System.out.print(libary.showAListOfBooks());
-                   break;
-               case 2:
-                   System.out.print(libary.showAListOfBooksInDetail());
-                   break;
-               default:
-                   break;
-           }
-        } else {
-            System.out.print(userMessage.ERROR_MES_REPEAT_USER_OPTION);
+
+        System.out.print(userMessage.OPTIONS_MES);
+        String userInput = "";
+        while (!userInput.equals("quit")){
+            System.out.print(userMessage.GUIDE_PREFIX);
+            userInput = in.nextLine();
+            if (userInput.equals("quit")) {
+                System.out.print(userMessage.THANK_USER_MES);
+            } else if(Arrays.asList(options).contains(userInput)) {
+                switch (userInput) {
+                    case "1":
+                        System.out.print(libary.showAListOfBooks());
+                        break;
+                    case "2":
+                        System.out.print(libary.showAListOfBooksInDetail());
+                        break;
+                    default:
+                        break;
+                }
+            } else {
+                System.out.print(userMessage.ERROR_MES_REPEAT_USER_OPTION);
+            }
         }
+
     }
 }

@@ -19,22 +19,22 @@ public class Libary {
     }
 
     public String showAListOfBooks () {
-        StringBuilder messageBuilder = new StringBuilder().append("-- List of books --");
+        StringBuilder messageBuilder = new StringBuilder().append("\n-- List of books --");
 
         for (Book book: books){
             messageBuilder
-                    .append(String.format("\n%d. %s", books.indexOf(book) + 1, book.getBookName()));
+                    .append(String.format("\n- %s", book.getBookName()));
         }
         messageBuilder.append("\n");
         return messageBuilder.toString();
     }
 
     public String showAListOfBooksInDetail () {
-        StringBuilder messageBuilder = new StringBuilder().append("-- List of books in detail --");
+        StringBuilder messageBuilder = new StringBuilder().append("\n-- List of books in detail --");
 
         for (Book book: books){
             messageBuilder
-                    .append(String.format("\n%d. %s (%s) - by %s", books.indexOf(book) + 1, book.getBookName(), book.getPullicationYear(), book.getAuthor()));
+                    .append(String.format("\n- %s (%s) - by %s", book.getBookName(), book.getPullicationYear(), book.getAuthor()));
         }
         messageBuilder.append("\n");
         return messageBuilder.toString();

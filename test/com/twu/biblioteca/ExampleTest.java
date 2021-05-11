@@ -61,8 +61,7 @@ public class ExampleTest {
                 .append("menu\n") // enter to continue
                 .toString();
         String expectedConsoleResult = new StringBuilder()
-                .append(userMessage.WELCOME_MES)
-                .append(userMessage.OPTIONS_MES).toString();
+                .append(userMessage.WELCOME_MES).toString();
         ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 
@@ -100,11 +99,15 @@ public class ExampleTest {
         String userKeyboardInput = new StringBuilder()
                 .append("menu\n")
                 .append("5\n")
+                .append("quit\n")
                 .toString();
         String expectedConsoleResult = new StringBuilder()
                 .append(userMessage.WELCOME_MES)
                 .append(userMessage.OPTIONS_MES)
-                .append(userMessage.ERROR_MES_REPEAT_USER_OPTION).toString();
+                .append(userMessage.GUIDE_PREFIX)
+                .append(userMessage.ERROR_MES_REPEAT_USER_OPTION)
+                .append(userMessage.GUIDE_PREFIX)
+                .append(userMessage.THANK_USER_MES).toString();
         ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 
@@ -124,11 +127,15 @@ public class ExampleTest {
         String userKeyboardInput = new StringBuilder()
                 .append("menu\n")
                 .append("1\n")
+                .append("quit")
                 .toString();
         String expectedConsoleResult = new StringBuilder()
                 .append(userMessage.WELCOME_MES)
                 .append(userMessage.OPTIONS_MES)
-                .append(userMessage.SHOW_A_LIST_OF_BOOKS_MES).toString();
+                .append(userMessage.GUIDE_PREFIX)
+                .append(userMessage.SHOW_A_LIST_OF_BOOKS_MES)
+                .append(userMessage.GUIDE_PREFIX)
+                .append(userMessage.THANK_USER_MES).toString();
         ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 
@@ -148,11 +155,15 @@ public class ExampleTest {
         String userKeyboardInput = new StringBuilder()
                 .append("menu\n")
                 .append("2\n")
+                .append("quit")
                 .toString();
         String expectedConsoleResult = new StringBuilder()
                 .append(userMessage.WELCOME_MES)
                 .append(userMessage.OPTIONS_MES)
-                .append(userMessage.SHOW_A_LIST_OF_BOOKS_IN_DETAIL_MES).toString();
+                .append(userMessage.GUIDE_PREFIX)
+                .append(userMessage.SHOW_A_LIST_OF_BOOKS_IN_DETAIL_MES)
+                .append(userMessage.GUIDE_PREFIX)
+                .append(userMessage.THANK_USER_MES).toString();
         ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 

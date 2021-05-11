@@ -2,19 +2,22 @@ package com.twu.biblioteca;
 
 public class ConsoleMessage {
     public final String WELCOME_MES = "Welcome! type 'menu' to continue >>";
-    public final String OPTIONS_MES = "\n\t*** What do you want to do\n" +
-            "\t1. View a list of book\n" +
-            "\t2. View a list of book (include author and publication year)\n" +
-            "\t2. Check out book\n" +
-            "\t3. Return a book\n" +
-            "\t4. Quit this app\n\n";
-    public final String ERROR_MES_REPEAT_USER_OPTION = "Sorry, it isn\'t correct option. please try again >>";
-    public final String SHOW_A_LIST_OF_BOOKS_MES = "-- List of books --" +
-            "\n1. Klara and the Sun" +
-            "\n2. Luster" +
-            "\n3. Aftershocks";
-    public final String SHOW_A_LIST_OF_BOOKS_IN_DETAIL_MES = "-- List of books in detail --" +
-            "\n1. Klara and the Sun (2017) - by Kazuo Ishiguro" +
-            "\n2. Luster (2020) - by Raven Leilani" +
-            "\n3. Aftershocks (2018) - by Nadia Owusu";
+    public final String OPTIONS_MES = "\n*** Here is options" +
+            "\n1. View a list of book" +
+            "\n2. View a list of book (include author and publication year)" +
+            "\n3. Check out book" +
+            "\n4. Return a book\n\n";
+    public final String GUIDE_PREFIX = "Choose 1 to 4 or \'quit\': ";
+    public final String ERROR_MES_REPEAT_USER_OPTION = "\nSorry, it isn\'t correct option. please try again.\n";
+    public final String SHOW_A_LIST_OF_BOOKS_MES = "\n-- List of books --" +
+            "\n- Klara and the Sun" +
+            "\n- Luster" +
+            "\n- Aftershocks" +
+            "\n";
+    public final String SHOW_A_LIST_OF_BOOKS_IN_DETAIL_MES = "\n-- List of books in detail --" +
+            "\n- Klara and the Sun (2017) - by Kazuo Ishiguro" +
+            "\n- Luster (2020) - by Raven Leilani" +
+            "\n- Aftershocks (2018) - by Nadia Owusu" +
+            "\n";
+    public final String THANK_USER_MES = "Thanks!";
 }
