@@ -9,6 +9,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.Scanner;
 
 import static org.junit.Assert.assertEquals;
 
@@ -46,9 +47,10 @@ public class ExampleTest {
                 .append(userMessage.WELCOME_MES).toString();
         ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
+        Scanner in = new Scanner(System.in);
 
         // When
-        BibliotecaApp.getMainMenu();
+        BibliotecaApp.getMainMenu(in);
 
         // Then
         assertEquals(expectedConsoleResult, outputBytes.toString());
@@ -65,9 +67,10 @@ public class ExampleTest {
                 .append(userMessage.OPTIONS_MES).toString();
         ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
+        Scanner in = new Scanner(System.in);
 
         // When
-        BibliotecaApp.getMainMenu();
+        BibliotecaApp.getMainMenu(in);
 
         // Then
         assertEquals(String.format(expectedConsoleResult), outputBytes.toString());
@@ -84,14 +87,15 @@ public class ExampleTest {
                 .append(userMessage.ERROR_MES_REPEAT_USER_OPTION).toString();
         ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
+        Scanner in = new Scanner(System.in);
 
         // When
-        BibliotecaApp.getMainMenu();
+        BibliotecaApp.getMainMenu(in);
 
         // Then
         assertEquals(String.format(expectedConsoleResult), outputBytes.toString());
     }
-        InputStream inputConsole = System.in;
+
         ByteArrayInputStream inputBytes = new ByteArrayInputStream("\n\n2".getBytes());
         System.setIn(inputBytes);
 
