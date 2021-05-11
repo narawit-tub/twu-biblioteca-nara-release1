@@ -27,10 +27,16 @@ public class BibliotecaApp {
     public static void chooseOption(Scanner in){
         ConsoleMessage userMessage = new ConsoleMessage();
         Integer[] options = new Integer[] {1, 2, 3, 4};
+        Libary libary = new Libary();
 
         Integer userInput = Integer.parseInt(in.nextLine());
         if(Arrays.asList(options).contains(userInput)) {
-           // do something
+           switch (userInput) {
+               case 1:
+                   System.out.print(libary.showAListOfBooks());
+               default:
+                   break;
+           }
         } else {
             System.out.print(userMessage.ERROR_MES_REPEAT_USER_OPTION);
         }
