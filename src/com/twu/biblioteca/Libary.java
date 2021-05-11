@@ -25,6 +25,7 @@ public class Libary {
             messageBuilder
                     .append(String.format("\n%d. %s", books.indexOf(book) + 1, book.getBookName()));
         }
+        messageBuilder.append("\n");
         return messageBuilder.toString();
     }
 
@@ -35,6 +36,7 @@ public class Libary {
             messageBuilder
                     .append(String.format("\n%d. %s (%s) - by %s", books.indexOf(book) + 1, book.getBookName(), book.getPullicationYear(), book.getAuthor()));
         }
+        messageBuilder.append("\n");
         return messageBuilder.toString();
     }
 }
