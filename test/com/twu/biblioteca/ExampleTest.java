@@ -140,6 +140,19 @@ public class ExampleTest {
         // Then
         assertEquals(String.format(expectedConsoleResult), outputBytes.toString());
     }
+
+    @Test
+    public void ViewAListOfBooksInDetail(){
+        // Given
+        Libary libary = new Libary();
+        String userKeyboardInput = new StringBuilder()
+                .append("menu\n")
+                .append("2\n")
+                .toString();
+        String expectedConsoleResult = new StringBuilder()
+                .append(userMessage.WELCOME_MES)
+                .append(userMessage.OPTIONS_MES)
+                .append(userMessage.SHOW_A_LIST_OF_BOOKS_IN_DETAIL_MES).toString();
         ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 

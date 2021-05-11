@@ -10,7 +10,11 @@ public class ConsoleMessage {
             "\t4. Quit this app\n\n";
     public final String ERROR_MES_REPEAT_USER_OPTION = "Sorry, it isn\'t correct option. please try again >>";
     public final String SHOW_A_LIST_OF_BOOKS_MES = "-- List of books --" +
-            "\n1. Klara and the Sun by Kazuo Ishiguro" +
-            "\n2. Luster by Raven Leilani" +
-            "\n3. Aftershocks by Nadia Owusu";
+            "\n1. Klara and the Sun" +
+            "\n2. Luster" +
+            "\n3. Aftershocks";
+    public final String SHOW_A_LIST_OF_BOOKS_IN_DETAIL_MES = "-- List of books in detail --" +
+            "\n1. Klara and the Sun (2017) - by Kazuo Ishiguro" +
+            "\n2. Luster (2020) - by Raven Leilani" +
+            "\n3. Aftershocks (2018) - by Nadia Owusu";
 }
