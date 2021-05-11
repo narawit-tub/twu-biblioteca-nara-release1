@@ -23,27 +23,39 @@ public class ExampleTest {
 
     public ByteArrayOutputStream outputBytes;
     public PrintStream outputConsole;
+    public InputStream inputConsole;
 
     @Before
     public void setUp(){
         outputBytes = new ByteArrayOutputStream();
         outputConsole = System.out;
+        inputConsole = System.in;
         System.setOut(new PrintStream(outputBytes));
+
+        ByteArrayInputStream inputBytes;
     }
 
     @After
     public void tearDown(){
         System.setOut(outputConsole);
+        System.setIn(inputConsole);
     }
 
     @Test
     public void UserSeesAWelcomeMessage() {
+        // Given
+        String userKeyboardInput = new StringBuilder()
+                .append("\n")
+                .toString();
+        String expectedConsoleResult = new StringBuilder()
+                .append(WELCOME_MES + "\n").toString();
+        ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
+        System.setIn(inputBytes);
+
         // When
         BibliotecaApp.main(new String[] {});
 
         // Then
-        // 1. "welcome" message in terminal
-        // 2. show "press enter key to continue"
         assertEquals(WELCOME_MES, outputBytes.toString());
     }
 
