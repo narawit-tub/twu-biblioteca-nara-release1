@@ -86,7 +86,7 @@ public class ExampleTest {
         System.setIn(inputBytes);
 
         // When
-        BibliotecaApp.main(new String[] {});
+        BibliotecaApp.getMainMenu();
 
         // Then
         assertEquals(String.format(expectedConsoleResult), outputBytes.toString());
