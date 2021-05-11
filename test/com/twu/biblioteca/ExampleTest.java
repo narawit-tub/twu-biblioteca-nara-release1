@@ -72,6 +72,25 @@ public class ExampleTest {
         // Then
         assertEquals(String.format(expectedConsoleResult), outputBytes.toString());
     }
+
+    @Test
+    public void DidNotKeyMenuToViewMainMenuOfOptions() {
+        // Given
+        String userKeyboardInput = new StringBuilder()
+                .append("somethingelsethatisn\'tmenu\n") // enter to continue
+                .toString();
+        String expectedConsoleResult = new StringBuilder()
+                .append(userMessage.WELCOME_MES)
+                .append(userMessage.ERROR_MES_REPEAT_USER_OPTION).toString();
+        ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
+        System.setIn(inputBytes);
+
+        // When
+        BibliotecaApp.main(new String[] {});
+
+        // Then
+        assertEquals(String.format(expectedConsoleResult), outputBytes.toString());
+    }
         InputStream inputConsole = System.in;
         ByteArrayInputStream inputBytes = new ByteArrayInputStream("\n\n2".getBytes());
         System.setIn(inputBytes);
