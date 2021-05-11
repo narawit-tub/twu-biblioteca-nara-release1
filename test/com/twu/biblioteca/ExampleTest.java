@@ -95,12 +95,25 @@ public class ExampleTest {
     }
 
     @Test
+    public void NotifiedWhenChoseInvalidOption() {
+        // Given
+        String userKeyboardInput = new StringBuilder()
+                .append("menu\n")
+                .append("5\n")
+                .toString();
+        String expectedConsoleResult = new StringBuilder()
+                .append(userMessage.WELCOME_MES)
+                .append(userMessage.OPTIONS_MES)
+                .append(userMessage.ERROR_MES_REPEAT_USER_OPTION).toString();
+        ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 
         // When
-        BibliotecaApp.main(new String[] {});
+        Scanner in = new Scanner(System.in);
+        BibliotecaApp.getMainMenu(in);
+        BibliotecaApp.chooseOption(in);
 
         // Then
-        assertEquals(String.format(WELCOME_MES + "\n" + OPTIONS_MES), outputBytes.toString());
+        assertEquals(String.format(expectedConsoleResult), outputBytes.toString());
     }
 }
