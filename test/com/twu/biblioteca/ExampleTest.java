@@ -55,7 +55,7 @@ public class ExampleTest {
     }
 
     @Test
-    public void PressEnterToViewMainMenuOfOptions() {
+    public void KeyMenuToViewMainMenuOfOptions() {
         // Given
         String userKeyboardInput = new StringBuilder()
                 .append("menu\n") // enter to continue
