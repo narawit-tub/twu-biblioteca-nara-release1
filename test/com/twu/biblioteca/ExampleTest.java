@@ -27,8 +27,6 @@ public class ExampleTest {
         outputConsole = System.out;
         inputConsole = System.in;
         System.setOut(new PrintStream(outputBytes));
-
-        ByteArrayInputStream inputBytes;
     }
 
     @After
@@ -47,9 +45,9 @@ public class ExampleTest {
                 .append(userMessage.WELCOME_MES).toString();
         ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
-        Scanner in = new Scanner(System.in);
 
         // When
+        Scanner in = new Scanner(System.in);
         BibliotecaApp.getMainMenu(in);
 
         // Then
@@ -67,9 +65,9 @@ public class ExampleTest {
                 .append(userMessage.OPTIONS_MES).toString();
         ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
-        Scanner in = new Scanner(System.in);
 
         // When
+        Scanner in = new Scanner(System.in);
         BibliotecaApp.getMainMenu(in);
 
         // Then
@@ -87,16 +85,16 @@ public class ExampleTest {
                 .append(userMessage.ERROR_MES_REPEAT_USER_OPTION).toString();
         ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
-        Scanner in = new Scanner(System.in);
 
         // When
+        Scanner in = new Scanner(System.in);
         BibliotecaApp.getMainMenu(in);
 
         // Then
         assertEquals(String.format(expectedConsoleResult), outputBytes.toString());
     }
 
-        ByteArrayInputStream inputBytes = new ByteArrayInputStream("\n\n2".getBytes());
+    @Test
         System.setIn(inputBytes);
 
         // When

@@ -7,4 +7,5 @@ public class ConsoleMessage {
             "\t2. Check out book\n" +
             "\t3. Return a book\n" +
             "\t4. Quit this app\n\n";
+    public final String ERROR_MES_REPEAT_USER_OPTION = "Sorry, it isn\'t correct option. please try again >>";
 }
