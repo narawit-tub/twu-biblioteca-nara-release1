@@ -14,19 +14,14 @@ import static org.junit.Assert.assertEquals;
 
 public class ExampleTest {
 
-    public final String WELCOME_MES = "Welcome! Press 'Enter' Key to continue.";
-    public final String OPTIONS_MES = "\n\t*** What do you want to do\n" +
-            "\t1. View a list of book\n" +
-            "\t2. Check out book\n" +
-            "\t3. Return a book\n" +
-            "\t4. Quit this app\n\n";
-
     public ByteArrayOutputStream outputBytes;
     public PrintStream outputConsole;
     public InputStream inputConsole;
+    public ConsoleMessage userMessage;
 
     @Before
     public void setUp(){
+        userMessage = new ConsoleMessage();
         outputBytes = new ByteArrayOutputStream();
         outputConsole = System.out;
         inputConsole = System.in;
@@ -48,7 +43,7 @@ public class ExampleTest {
                 .append("\n")
                 .toString();
         String expectedConsoleResult = new StringBuilder()
-                .append(WELCOME_MES + "\n").toString();
+                .append(userMessage.WELCOME_MES + "\n").toString();
         ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 
@@ -56,7 +51,7 @@ public class ExampleTest {
         BibliotecaApp.main(new String[] {});
 
         // Then
-        assertEquals(WELCOME_MES, outputBytes.toString());
+        assertEquals(userMessage.WELCOME_MES, outputBytes.toString());
     }
 
     @Test
