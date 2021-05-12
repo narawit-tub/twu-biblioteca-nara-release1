@@ -175,6 +175,25 @@ public class ExampleTest {
         // Then
         assertEquals(String.format(expectedConsoleResult), outputBytes.toString());
     }
+
+    @Test
+    public void checkoutBook() {
+        // Given
+        Libary libary = new Libary();
+        String userKeyboardInput = new StringBuilder()
+                .append("menu\n")
+                .append("3\n")
+                .append("Klara and the Sun\n")
+                .append("quit\n")
+                .toString();
+        String expectedConsoleResult = new StringBuilder()
+                .append(userMessage.STARTING_ASK_TO_CONINUE) // menu
+                .append(userMessage.OPTIONS__SHOW_AVAILIABLE_OPTIONS)
+                .append(userMessage.OPTIONS__ASK_FOR_A_OPTION) // 3
+                .append(userMessage.OPTION_CHECKOUT__ASK_THE_NAME_OF_BOOK_TO_CHECKOUT) //Klara and the Sun
+                .append(userMessage.OPTION_CHECKOUT__SUCCESS_CHECKOUT_MES)
+                .append(userMessage.OPTIONS__ASK_FOR_A_OPTION)
+                .append(userMessage.ENDING__END_MES).toString();
         ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 
