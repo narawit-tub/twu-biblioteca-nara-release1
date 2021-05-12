@@ -13,6 +13,10 @@ public class Libary {
         books.add(new Book("Aftershocks", "Nadia Owusu", "2018"));
     }
 
+    public Integer getNumberOfBooks() {
+        return books.toArray().length;
+    }
+
     public String showAListOfBooks () {
         StringBuilder messageBuilder = new StringBuilder().append("\n-- List of books --");
 

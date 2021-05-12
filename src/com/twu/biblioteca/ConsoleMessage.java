@@ -14,6 +14,10 @@ public class ConsoleMessage {
             "\n- Luster" +
             "\n- Aftershocks" +
             "\n";
+    public final String OPTION_SHOW_LIST_OF_BOOK__AFTER_CHECKOUT = "\n-- List of books --" +
+            "\n- Luster" +
+            "\n- Aftershocks" +
+            "\n";
     public final String OPTION_SHOW_LIST_OF_BOOK_IN_DETAIL = "\n-- List of books in detail --" +
             "\n- Klara and the Sun (2017) - by Kazuo Ishiguro" +
             "\n- Luster (2020) - by Raven Leilani" +
