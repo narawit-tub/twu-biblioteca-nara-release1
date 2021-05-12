@@ -5,11 +5,6 @@ import java.util.ArrayList;
 public class Libary {
     private ArrayList<Book> books;
 
-//    public final String SHOW_A_LIST_OF_BOOKS_IN_DETAIL_MES = "-- List of books in detail--" +
-//            "\n1. Klara and the Sun (2017) - by Kazuo Ishiguro" +
-//            "\n2. Luster (2020) - by Raven Leilani" +
-//            "\n3. Aftershocks (2018) - by Nadia Owusu";
-
     Libary(){
         books = new ArrayList<Book>();
 

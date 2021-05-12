@@ -19,6 +19,8 @@ public class ExampleTest {
     public PrintStream outputConsole;
     public InputStream inputConsole;
     public ConsoleMessage userMessage;
+    public Libary libary;
+    public ByteArrayInputStream inputBytes;
 
     @Before
     public void setUp(){
@@ -27,6 +29,7 @@ public class ExampleTest {
         outputConsole = System.out;
         inputConsole = System.in;
         System.setOut(new PrintStream(outputBytes));
+        libary = new Libary();
     }
 
     @After
@@ -62,7 +65,7 @@ public class ExampleTest {
                 .toString();
         String expectedConsoleResult = new StringBuilder()
                 .append(userMessage.STARTING_ASK_TO_CONINUE).toString();
-        ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
+        inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 
         // When
@@ -82,7 +85,7 @@ public class ExampleTest {
         String expectedConsoleResult = new StringBuilder()
                 .append(userMessage.STARTING_ASK_TO_CONINUE)
                 .append(userMessage.OPTIONS__INCORRECT_OPTION_WARNING).toString();
-        ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
+        inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 
         // When
@@ -108,13 +111,13 @@ public class ExampleTest {
                 .append(userMessage.OPTIONS__INCORRECT_OPTION_WARNING)
                 .append(userMessage.OPTIONS__ASK_FOR_A_OPTION)
                 .append(userMessage.ENDING__END_MES).toString();
-        ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
+        inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 
         // When
         Scanner in = new Scanner(System.in);
         BibliotecaApp.getMainMenu(in);
-        BibliotecaApp.chooseOption(in);
+        BibliotecaApp.processLibaryOperation(in, libary);
 
         // Then
         assertEquals(String.format(expectedConsoleResult), outputBytes.toString());
@@ -123,7 +126,6 @@ public class ExampleTest {
     @Test
     public void ViewAListOfBooks(){
         // Given
-        Libary libary = new Libary();
         String userKeyboardInput = new StringBuilder()
                 .append("menu\n")
                 .append("1\n")
@@ -136,13 +138,13 @@ public class ExampleTest {
                 .append(userMessage.OPTION_SHOW_LIST_OF_BOOK)
                 .append(userMessage.OPTIONS__ASK_FOR_A_OPTION)
                 .append(userMessage.ENDING__END_MES).toString();
-        ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
+        inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 
         // When
         Scanner in = new Scanner(System.in);
         BibliotecaApp.getMainMenu(in);
-        BibliotecaApp.chooseOption(in);
+        BibliotecaApp.processLibaryOperation(in, libary);
 
         // Then
         assertEquals(String.format(expectedConsoleResult), outputBytes.toString());
@@ -164,13 +166,13 @@ public class ExampleTest {
                 .append(userMessage.OPTION_SHOW_LIST_OF_BOOK_IN_DETAIL)
                 .append(userMessage.OPTIONS__ASK_FOR_A_OPTION)
                 .append(userMessage.ENDING__END_MES).toString();
-        ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
+        inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 
         // When
         Scanner in = new Scanner(System.in);
         BibliotecaApp.getMainMenu(in);
-        BibliotecaApp.chooseOption(in);
+        BibliotecaApp.processLibaryOperation(in, libary);
 
         // Then
         assertEquals(String.format(expectedConsoleResult), outputBytes.toString());
@@ -194,13 +196,13 @@ public class ExampleTest {
                 .append(userMessage.OPTION_CHECKOUT__SUCCESS_CHECKOUT_MES)
                 .append(userMessage.OPTIONS__ASK_FOR_A_OPTION)
                 .append(userMessage.ENDING__END_MES).toString();
-        ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
+        inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 
         // When
         Scanner in = new Scanner(System.in);
         BibliotecaApp.getMainMenu(in);
-        BibliotecaApp.chooseOption(in);
+        BibliotecaApp.processLibaryOperation(in, libary);
 
         // Then
         assertEquals(String.format(expectedConsoleResult), outputBytes.toString());

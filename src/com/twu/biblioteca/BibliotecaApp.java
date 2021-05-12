@@ -6,8 +6,9 @@ import java.util.Scanner;
 public class BibliotecaApp {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+        Libary libary = new Libary();
         getMainMenu(in);
-        chooseOption(in);
+        processLibaryOperation(in, libary);
     }
 
     public static void getMainMenu(Scanner in) {
@@ -22,11 +23,9 @@ public class BibliotecaApp {
         }
     }
 
-    public static void chooseOption(Scanner in){
+    public static void processLibaryOperation(Scanner in, Libary libary){
         ConsoleMessage userMessage = new ConsoleMessage();
         String[] options = new String[] {"1", "2", "3", "4"};
-        Libary libary = new Libary();
-
 
         System.out.print(userMessage.OPTIONS__SHOW_AVAILIABLE_OPTIONS);
         String userInput = "";
