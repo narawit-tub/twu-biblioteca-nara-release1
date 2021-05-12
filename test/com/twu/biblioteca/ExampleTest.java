@@ -42,7 +42,7 @@ public class ExampleTest {
                 .append("\n")
                 .toString();
         String expectedConsoleResult = new StringBuilder()
-                .append(userMessage.WELCOME_MES).toString();
+                .append(userMessage.STARTING_ASK_TO_CONINUE).toString();
         ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 
@@ -61,7 +61,7 @@ public class ExampleTest {
                 .append("menu\n") // enter to continue
                 .toString();
         String expectedConsoleResult = new StringBuilder()
-                .append(userMessage.WELCOME_MES).toString();
+                .append(userMessage.STARTING_ASK_TO_CONINUE).toString();
         ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 
@@ -80,8 +80,8 @@ public class ExampleTest {
                 .append("somethingelsethatisn\'tmenu\n") // enter to continue
                 .toString();
         String expectedConsoleResult = new StringBuilder()
-                .append(userMessage.WELCOME_MES)
-                .append(userMessage.ERROR_MES_REPEAT_USER_OPTION).toString();
+                .append(userMessage.STARTING_ASK_TO_CONINUE)
+                .append(userMessage.OPTIONS__INCORRECT_OPTION_WARNING).toString();
         ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 
@@ -102,12 +102,12 @@ public class ExampleTest {
                 .append("quit\n")
                 .toString();
         String expectedConsoleResult = new StringBuilder()
-                .append(userMessage.WELCOME_MES)
-                .append(userMessage.OPTIONS_MES)
-                .append(userMessage.GUIDE_PREFIX)
-                .append(userMessage.ERROR_MES_REPEAT_USER_OPTION)
-                .append(userMessage.GUIDE_PREFIX)
-                .append(userMessage.THANK_USER_MES).toString();
+                .append(userMessage.STARTING_ASK_TO_CONINUE)
+                .append(userMessage.OPTIONS__SHOW_AVAILIABLE_OPTIONS)
+                .append(userMessage.OPTIONS__ASK_FOR_A_OPTION)
+                .append(userMessage.OPTIONS__INCORRECT_OPTION_WARNING)
+                .append(userMessage.OPTIONS__ASK_FOR_A_OPTION)
+                .append(userMessage.ENDING__END_MES).toString();
         ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 
@@ -130,12 +130,12 @@ public class ExampleTest {
                 .append("quit")
                 .toString();
         String expectedConsoleResult = new StringBuilder()
-                .append(userMessage.WELCOME_MES)
-                .append(userMessage.OPTIONS_MES)
-                .append(userMessage.GUIDE_PREFIX)
-                .append(userMessage.SHOW_A_LIST_OF_BOOKS_MES)
-                .append(userMessage.GUIDE_PREFIX)
-                .append(userMessage.THANK_USER_MES).toString();
+                .append(userMessage.STARTING_ASK_TO_CONINUE)
+                .append(userMessage.OPTIONS__SHOW_AVAILIABLE_OPTIONS)
+                .append(userMessage.OPTIONS__ASK_FOR_A_OPTION)
+                .append(userMessage.OPTION_SHOW_LIST_OF_BOOK)
+                .append(userMessage.OPTIONS__ASK_FOR_A_OPTION)
+                .append(userMessage.ENDING__END_MES).toString();
         ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 
@@ -158,12 +158,23 @@ public class ExampleTest {
                 .append("quit")
                 .toString();
         String expectedConsoleResult = new StringBuilder()
-                .append(userMessage.WELCOME_MES)
-                .append(userMessage.OPTIONS_MES)
-                .append(userMessage.GUIDE_PREFIX)
-                .append(userMessage.SHOW_A_LIST_OF_BOOKS_IN_DETAIL_MES)
-                .append(userMessage.GUIDE_PREFIX)
-                .append(userMessage.THANK_USER_MES).toString();
+                .append(userMessage.STARTING_ASK_TO_CONINUE)
+                .append(userMessage.OPTIONS__SHOW_AVAILIABLE_OPTIONS)
+                .append(userMessage.OPTIONS__ASK_FOR_A_OPTION)
+                .append(userMessage.OPTION_SHOW_LIST_OF_BOOK_IN_DETAIL)
+                .append(userMessage.OPTIONS__ASK_FOR_A_OPTION)
+                .append(userMessage.ENDING__END_MES).toString();
+        ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
+        System.setIn(inputBytes);
+
+        // When
+        Scanner in = new Scanner(System.in);
+        BibliotecaApp.getMainMenu(in);
+        BibliotecaApp.chooseOption(in);
+
+        // Then
+        assertEquals(String.format(expectedConsoleResult), outputBytes.toString());
+    }
         ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 

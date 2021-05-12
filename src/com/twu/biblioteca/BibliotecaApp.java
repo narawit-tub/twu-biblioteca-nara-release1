@@ -12,12 +12,12 @@ public class BibliotecaApp {
 
     public static void getMainMenu(Scanner in) {
         ConsoleMessage userMessage = new ConsoleMessage();
-        System.out.print(userMessage.WELCOME_MES);
+        System.out.print(userMessage.STARTING_ASK_TO_CONINUE);
 
         String userInput = in.nextLine();
         if (!userInput.toLowerCase().equals("menu")) {
             if (!userInput.equals("")){
-                System.out.print(userMessage.ERROR_MES_REPEAT_USER_OPTION);
+                System.out.print(userMessage.OPTIONS__INCORRECT_OPTION_WARNING);
             }
         }
     }
@@ -28,13 +28,13 @@ public class BibliotecaApp {
         Libary libary = new Libary();
 
 
-        System.out.print(userMessage.OPTIONS_MES);
+        System.out.print(userMessage.OPTIONS__SHOW_AVAILIABLE_OPTIONS);
         String userInput = "";
         while (!userInput.equals("quit")){
-            System.out.print(userMessage.GUIDE_PREFIX);
+            System.out.print(userMessage.OPTIONS__ASK_FOR_A_OPTION);
             userInput = in.nextLine();
             if (userInput.equals("quit")) {
-                System.out.print(userMessage.THANK_USER_MES);
+                System.out.print(userMessage.ENDING__END_MES);
             } else if(Arrays.asList(options).contains(userInput)) {
                 switch (userInput) {
                     case "1":
@@ -47,7 +47,7 @@ public class BibliotecaApp {
                         break;
                 }
             } else {
-                System.out.print(userMessage.ERROR_MES_REPEAT_USER_OPTION);
+                System.out.print(userMessage.OPTIONS__INCORRECT_OPTION_WARNING);
             }
         }
 
