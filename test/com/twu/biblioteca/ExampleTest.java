@@ -153,7 +153,6 @@ public class ExampleTest {
     @Test
     public void ViewAListOfBooksInDetail(){
         // Given
-        Libary libary = new Libary();
         String userKeyboardInput = new StringBuilder()
                 .append("menu\n")
                 .append("2\n")
@@ -181,7 +180,37 @@ public class ExampleTest {
     @Test
     public void checkoutBook() {
         // Given
-        Libary libary = new Libary();
+        String userKeyboardInput = new StringBuilder()
+                .append("menu\n")
+                .append("3\n")
+                .append("Klara and the Sun\n")
+                .append("1\n")
+                .append("quit\n")
+                .toString();
+        String expectedConsoleResult = new StringBuilder()
+                .append(userMessage.STARTING_ASK_TO_CONINUE) // >> menu
+                .append(userMessage.OPTIONS__SHOW_AVAILIABLE_OPTIONS)
+                .append(userMessage.OPTIONS__ASK_FOR_A_OPTION) // >> 3
+                .append(userMessage.OPTION_CHECKOUT__ASK_THE_NAME_OF_BOOK_TO_CHECKOUT) // >> Klara and the Sun
+                .append(userMessage.OPTION_CHECKOUT__SUCCESS_CHECKOUT_MES)
+                .append(userMessage.OPTIONS__ASK_FOR_A_OPTION) // >> 1
+                .append(userMessage.OPTION_SHOW_LIST_OF_BOOK__AFTER_CHECKOUT)
+                .append(userMessage.OPTIONS__ASK_FOR_A_OPTION) // >> quit
+                .append(userMessage.ENDING__END_MES).toString();
+        inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
+        System.setIn(inputBytes);
+
+        // When
+        Scanner in = new Scanner(System.in);
+        BibliotecaApp.getMainMenu(in);
+        BibliotecaApp.processLibaryOperation(in, libary);
+
+        // Then
+        assertEquals(String.format(expectedConsoleResult), outputBytes.toString());
+        // there are 2 book left
+        assertEquals (Integer.valueOf(2), libary.getNumberOfBooks());
+    }
+
         String userKeyboardInput = new StringBuilder()
                 .append("menu\n")
                 .append("3\n")
