@@ -20,4 +20,7 @@ public class ConsoleMessage {
             "\n- Aftershocks (2018) - by Nadia Owusu" +
             "\n";
     public final String OPTION_CHECKOUT__ASK_THE_NAME_OF_BOOK_TO_CHECKOUT = "name of book: ";
+    public final String OPTION_CHECKOUT__SUCCESS_CHECKOUT_MES = "checkout successful!\n";
+    public final String OPTION_CHECKOUT__UNSUCCESS_CHECKOUT_MES = "checkout unsuccessful! please re-type the book name.\n";
+    public final String ENDING__END_MES = "Thanks!";
 }

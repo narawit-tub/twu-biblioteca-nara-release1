@@ -39,4 +39,17 @@ public class Libary {
         messageBuilder.append("\n");
         return messageBuilder.toString();
     }
+
+    public Book checkoutBook(String bookName) {
+        Book checkedOutBook = null;
+        for (Book book : books) {
+            if (book.getBookName().equals(bookName)) {
+                checkedOutBook = book;
+                break;
+            }
+        }
+
+        books.remove(checkedOutBook);
+        return (checkedOutBook != null) ? checkedOutBook : null;
+    }
 }

@@ -43,6 +43,15 @@ public class BibliotecaApp {
                     case "2":
                         System.out.print(libary.showAListOfBooksInDetail());
                         break;
+                    case "3":
+                        System.out.print(userMessage.OPTION_CHECKOUT__ASK_THE_NAME_OF_BOOK_TO_CHECKOUT);
+                        userInput = in.nextLine();
+                        Book checkedoutBook = libary.checkoutBook(userInput);
+                        if (checkedoutBook != null) {
+                            System.out.print(userMessage.OPTION_CHECKOUT__SUCCESS_CHECKOUT_MES);
+                        } else {
+                            System.out.print(userMessage.OPTION_CHECKOUT__UNSUCCESS_CHECKOUT_MES);
+                        }
                     default:
                         break;
                 }
