@@ -51,7 +51,9 @@ public class BibliotecaApp {
                         } else {
                             System.out.print(userMessage.OPTION_CHECKOUT__UNSUCCESS_CHECKOUT_MES);
                         }
+                        break;
                     default:
+                        System.out.print(userMessage.OPTIONS__INCORRECT_OPTION_WARNING);
                         break;
                 }
             } else {
