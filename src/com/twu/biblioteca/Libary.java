@@ -17,26 +17,8 @@ public class Libary {
         return books.toArray().length;
     }
 
-    public String showAListOfBooks () {
-        StringBuilder messageBuilder = new StringBuilder().append("\n-- List of books --");
-
-        for (Book book: books){
-            messageBuilder
-                    .append(String.format("\n- %s", book.getBookName()));
-        }
-        messageBuilder.append("\n");
-        return messageBuilder.toString();
-    }
-
-    public String showAListOfBooksInDetail () {
-        StringBuilder messageBuilder = new StringBuilder().append("\n-- List of books in detail --");
-
-        for (Book book: books){
-            messageBuilder
-                    .append(String.format("\n- %s (%s) - by %s", book.getBookName(), book.getPullicationYear(), book.getAuthor()));
-        }
-        messageBuilder.append("\n");
-        return messageBuilder.toString();
+    public ArrayList<Book> getBooks() {
+        return books;
     }
 
     public Book checkoutBook(String bookName) {

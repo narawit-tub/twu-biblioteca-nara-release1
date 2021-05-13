@@ -36,10 +36,18 @@ public class BibliotecaApp {
 
             switch (userInput) {
                 case "1":
-                    System.out.print(libary.showAListOfBooks());
+                    System.out.print("\n-- List of books --");
+                    for (Book book: libary.getBooks()){
+                        System.out.print(String.format("\n- %s", book.getBookName()));
+                    }
+                    System.out.print("\n");
                     break;
                 case "2":
-                    System.out.print(libary.showAListOfBooksInDetail());
+                    System.out.print("\n-- List of books in detail --");
+                    for (Book book: libary.getBooks()){
+                        System.out.print(String.format("\n- %s", book.getInformationDetail()));
+                    }
+                    System.out.print("\n");
                     break;
                 case "3":
                     System.out.print(userMessage.OPTION_CHECKOUT__ASK_THE_NAME_OF_BOOK_TO_CHECKOUT);

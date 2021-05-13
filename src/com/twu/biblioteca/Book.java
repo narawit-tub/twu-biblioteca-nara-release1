@@ -26,5 +26,7 @@ public class Book {
         return bookName;
     }
 
-    // toString
+    public String getInformationDetail() {
+        return String.format("%s (%s) - by %s", this.getBookName(), this.getPullicationYear(), this.getAuthor());
+    }
 }
