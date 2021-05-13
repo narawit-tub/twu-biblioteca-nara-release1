@@ -45,7 +45,8 @@ public class ExampleTest {
                 .append("\n")
                 .toString();
         String expectedConsoleResult = new StringBuilder()
-                .append(userMessage.STARTING_ASK_TO_CONINUE).toString();
+                .append(userMessage.STARTING_ASK_TO_CONINUE)
+                .append(userMessage.OPTIONS__INCORRECT_OPTION_WARNING).toString();
         ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 
@@ -62,9 +63,11 @@ public class ExampleTest {
         // Given
         String userKeyboardInput = new StringBuilder()
                 .append("menu\n") // enter to continue
+                .append("\n")
                 .toString();
         String expectedConsoleResult = new StringBuilder()
-                .append(userMessage.STARTING_ASK_TO_CONINUE).toString();
+                .append(userMessage.STARTING_ASK_TO_CONINUE)
+                .append(userMessage.OPTIONS__SHOW_AVAILIABLE_OPTIONS).toString();
         inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 

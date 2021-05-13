@@ -41,6 +41,7 @@ public class Libary {
 
     public Book checkoutBook(String bookName) {
         Book checkedOutBook = null;
+
         for (Book book : books) {
             if (book.getBookName().equals(bookName)) {
                 checkedOutBook = book;
