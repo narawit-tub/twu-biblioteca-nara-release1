@@ -27,6 +27,14 @@ public class Book {
         return bookName;
     }
 
+    public Boolean getAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(Boolean available) {
+        isAvailable = available;
+    }
+
     public String getInformationDetail() {
         return String.format("%s (%s) by %s - %s", this.getBookName(), this.getPullicationYear(), this.getAuthor(), this.isAvailable ? "available" : "not available");
     }

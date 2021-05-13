@@ -218,7 +218,7 @@ public class ExampleTest {
 
         // Then
         assertEquals(String.format(expectedConsoleResult), outputBytes.toString());
-        assertEquals(Integer.valueOf(2), libary.getNumberOfBooks());
+        assertEquals(Integer.valueOf(2), libary.getNumberOfAvailableBooks());
     }
 
     @Test
