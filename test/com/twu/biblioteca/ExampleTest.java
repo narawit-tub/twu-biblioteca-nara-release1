@@ -43,6 +43,7 @@ public class ExampleTest {
         // Given
         String userKeyboardInput = new StringBuilder()
                 .append("\n")
+                .append("quit\n")
                 .toString();
         String expectedConsoleResult = new StringBuilder()
                 .append(userMessage.STARTING_ASK_TO_CONINUE)
@@ -84,6 +85,7 @@ public class ExampleTest {
         // Given
         String userKeyboardInput = new StringBuilder()
                 .append("somethingelsethatisn\'tmenu\n") // enter to continue
+                .append("quit\n")
                 .toString();
         String expectedConsoleResult = new StringBuilder()
                 .append(userMessage.STARTING_ASK_TO_CONINUE)

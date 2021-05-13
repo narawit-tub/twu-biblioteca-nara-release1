@@ -20,6 +20,9 @@ public class BibliotecaApp {
         while(true) {
             userInput = in.nextLine();
             if (!Arrays.asList(options).contains(userInput)) {
+                if (userInput.equals("quit")) {
+                    break;
+                }
                 System.out.print("\n" + userMessage.OPTIONS__INCORRECT_OPTION_WARNING + "\n");
             } else {
                 System.out.print("\n" + userMessage.OPTIONS__SHOW_AVAILIABLE_OPTIONS + "\n\n");
