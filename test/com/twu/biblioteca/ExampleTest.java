@@ -9,6 +9,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import static org.junit.Assert.assertEquals;
@@ -29,7 +30,12 @@ public class ExampleTest {
         outputConsole = System.out;
         inputConsole = System.in;
         System.setOut(new PrintStream(outputBytes));
-        libary = new Libary();
+
+        ArrayList<Book> books = new ArrayList<>();
+        books.add(new Book("Klara and the Sun", "Kazuo Ishiguro", "2017"));
+        books.add(new Book("Luster", "Raven Leilani", "2020"));
+        books.add(new Book("Aftershocks", "Nadia Owusu", "2018"));
+        libary = new Libary(books);
     }
 
     @After

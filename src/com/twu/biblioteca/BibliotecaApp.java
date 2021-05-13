@@ -1,12 +1,18 @@
 package com.twu.biblioteca;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class BibliotecaApp {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        Libary libary = new Libary();
+        ArrayList<Book> books = new ArrayList<>();
+        books.add(new Book("Klara and the Sun", "Kazuo Ishiguro", "2017"));
+        books.add(new Book("Luster", "Raven Leilani", "2020"));
+        books.add(new Book("Aftershocks", "Nadia Owusu", "2018"));
+        Libary libary = new Libary(books);
+
         getMainMenu(in);
         processLibaryOperation(in, libary);
     }
