@@ -18,8 +18,8 @@ public class BibliotecaApp {
         String[] options = new String[] {"menu"};
 
         if (!Arrays.asList(options).contains(userInput)) {
-            System.out.print(userMessage.OPTIONS__INCORRECT_OPTION_WARNING);
-        } else System.out.print(userMessage.OPTIONS__SHOW_AVAILIABLE_OPTIONS);
+            System.out.print("\n" + userMessage.OPTIONS__INCORRECT_OPTION_WARNING + "\n");
+        } else System.out.print("\n" + userMessage.OPTIONS__SHOW_AVAILIABLE_OPTIONS + "\n\n");
     }
 
     public static void processLibaryOperation(Scanner in, Libary libary){
@@ -46,15 +46,15 @@ public class BibliotecaApp {
                     userInput = in.nextLine();
                     Book checkedoutBook = libary.checkoutBook(userInput);
                     if (checkedoutBook != null) {
-                        System.out.print(userMessage.OPTION_CHECKOUT__SUCCESS_CHECKOUT_MES);
+                        System.out.print(userMessage.OPTION_CHECKOUT__SUCCESS_CHECKOUT_MES + "\n");
                     } else {
-                        System.out.print(userMessage.OPTION_CHECKOUT__UNSUCCESS_CHECKOUT_MES);
+                        System.out.print(userMessage.OPTION_CHECKOUT__UNSUCCESS_CHECKOUT_MES + "\n");
                     }
                     break;
                 case "4":
                     break;
                 default:
-                    System.out.print(userMessage.OPTIONS__INCORRECT_OPTION_WARNING);
+                    System.out.print("\n" + userMessage.OPTIONS__INCORRECT_OPTION_WARNING + "\n");
                     break;
             }
         }

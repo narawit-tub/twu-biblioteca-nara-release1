@@ -46,7 +46,7 @@ public class ExampleTest {
                 .toString();
         String expectedConsoleResult = new StringBuilder()
                 .append(userMessage.STARTING_ASK_TO_CONINUE)
-                .append(userMessage.OPTIONS__INCORRECT_OPTION_WARNING).toString();
+                .append("\n" + userMessage.OPTIONS__INCORRECT_OPTION_WARNING + "\n").toString();
         ByteArrayInputStream inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 
@@ -67,7 +67,7 @@ public class ExampleTest {
                 .toString();
         String expectedConsoleResult = new StringBuilder()
                 .append(userMessage.STARTING_ASK_TO_CONINUE)
-                .append(userMessage.OPTIONS__SHOW_AVAILIABLE_OPTIONS).toString();
+                .append("\n" + userMessage.OPTIONS__SHOW_AVAILIABLE_OPTIONS + "\n\n").toString();
         inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 
@@ -87,7 +87,7 @@ public class ExampleTest {
                 .toString();
         String expectedConsoleResult = new StringBuilder()
                 .append(userMessage.STARTING_ASK_TO_CONINUE)
-                .append(userMessage.OPTIONS__INCORRECT_OPTION_WARNING).toString();
+                .append("\n" + userMessage.OPTIONS__INCORRECT_OPTION_WARNING + "\n").toString();
         inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
         System.setIn(inputBytes);
 
@@ -109,9 +109,9 @@ public class ExampleTest {
                 .toString();
         String expectedConsoleResult = new StringBuilder()
                 .append(userMessage.STARTING_ASK_TO_CONINUE)
-                .append(userMessage.OPTIONS__SHOW_AVAILIABLE_OPTIONS)
+                .append("\n" + userMessage.OPTIONS__SHOW_AVAILIABLE_OPTIONS + "\n\n")
                 .append(userMessage.OPTIONS__ASK_FOR_A_OPTION)
-                .append(userMessage.OPTIONS__INCORRECT_OPTION_WARNING)
+                .append("\n" + userMessage.OPTIONS__INCORRECT_OPTION_WARNING + "\n")
                 .append(userMessage.OPTIONS__ASK_FOR_A_OPTION)
                 .append(userMessage.ENDING__END_MES).toString();
         inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
@@ -136,9 +136,9 @@ public class ExampleTest {
                 .toString();
         String expectedConsoleResult = new StringBuilder()
                 .append(userMessage.STARTING_ASK_TO_CONINUE)
-                .append(userMessage.OPTIONS__SHOW_AVAILIABLE_OPTIONS)
+                .append("\n" + userMessage.OPTIONS__SHOW_AVAILIABLE_OPTIONS + "\n\n")
                 .append(userMessage.OPTIONS__ASK_FOR_A_OPTION)
-                .append(userMessage.OPTION_SHOW_LIST_OF_BOOK)
+                .append("\n" + userMessage.OPTION_SHOW_LIST_OF_BOOK + "\n")
                 .append(userMessage.OPTIONS__ASK_FOR_A_OPTION)
                 .append(userMessage.ENDING__END_MES).toString();
         inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
@@ -163,9 +163,9 @@ public class ExampleTest {
                 .toString();
         String expectedConsoleResult = new StringBuilder()
                 .append(userMessage.STARTING_ASK_TO_CONINUE)
-                .append(userMessage.OPTIONS__SHOW_AVAILIABLE_OPTIONS)
+                .append("\n" + userMessage.OPTIONS__SHOW_AVAILIABLE_OPTIONS + "\n\n")
                 .append(userMessage.OPTIONS__ASK_FOR_A_OPTION)
-                .append(userMessage.OPTION_SHOW_LIST_OF_BOOK_IN_DETAIL)
+                .append("\n" + userMessage.OPTION_SHOW_LIST_OF_BOOK_IN_DETAIL + "\n")
                 .append(userMessage.OPTIONS__ASK_FOR_A_OPTION)
                 .append(userMessage.ENDING__END_MES).toString();
         inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
@@ -192,12 +192,12 @@ public class ExampleTest {
                 .toString();
         String expectedConsoleResult = new StringBuilder()
                 .append(userMessage.STARTING_ASK_TO_CONINUE) // >> menu
-                .append(userMessage.OPTIONS__SHOW_AVAILIABLE_OPTIONS)
+                .append("\n" + userMessage.OPTIONS__SHOW_AVAILIABLE_OPTIONS + "\n\n")
                 .append(userMessage.OPTIONS__ASK_FOR_A_OPTION) // >> 3
                 .append(userMessage.OPTION_CHECKOUT__ASK_THE_NAME_OF_BOOK_TO_CHECKOUT) // >> Klara and the Sun
-                .append(userMessage.OPTION_CHECKOUT__SUCCESS_CHECKOUT_MES)
+                .append(userMessage.OPTION_CHECKOUT__SUCCESS_CHECKOUT_MES + "\n")
                 .append(userMessage.OPTIONS__ASK_FOR_A_OPTION) // >> 1
-                .append(userMessage.OPTION_SHOW_LIST_OF_BOOK__AFTER_CHECKOUT)
+                .append("\n" + userMessage.OPTION_SHOW_LIST_OF_BOOK__AFTER_CHECKOUT + "\n")
                 .append(userMessage.OPTIONS__ASK_FOR_A_OPTION) // >> quit
                 .append(userMessage.ENDING__END_MES).toString();
         inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
@@ -225,12 +225,12 @@ public class ExampleTest {
                 .toString();
         String expectedConsoleResult = new StringBuilder()
                 .append(userMessage.STARTING_ASK_TO_CONINUE) // >> menu
-                .append(userMessage.OPTIONS__SHOW_AVAILIABLE_OPTIONS)
+                .append("\n" + userMessage.OPTIONS__SHOW_AVAILIABLE_OPTIONS + "\n\n")
                 .append(userMessage.OPTIONS__ASK_FOR_A_OPTION) // >> 3
                 .append(userMessage.OPTION_CHECKOUT__ASK_THE_NAME_OF_BOOK_TO_CHECKOUT) // >> Klara and the Sun (wrong name)
-                .append(userMessage.OPTION_CHECKOUT__UNSUCCESS_CHECKOUT_MES)
+                .append(userMessage.OPTION_CHECKOUT__UNSUCCESS_CHECKOUT_MES + "\n")
                 .append(userMessage.OPTIONS__ASK_FOR_A_OPTION) // >> 1
-                .append(userMessage.OPTION_SHOW_LIST_OF_BOOK)
+                .append("\n" + userMessage.OPTION_SHOW_LIST_OF_BOOK + "\n")
                 .append(userMessage.OPTIONS__ASK_FOR_A_OPTION) // >> quit
                 .append(userMessage.ENDING__END_MES).toString();
         inputBytes = new ByteArrayInputStream(userKeyboardInput.getBytes());
