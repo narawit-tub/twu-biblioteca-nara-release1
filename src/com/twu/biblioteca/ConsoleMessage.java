@@ -25,6 +25,6 @@ public class ConsoleMessage {
     public final String OPTION_CHECKOUT__UNSUCCESS_CHECKOUT_MES = "checkout unsuccessful! please re-type the book name.";
     public final String OPTION_RETURNBOOK__ASK_THE_NAME_OF_BOOK_TO_RETURN = "name of returning book: ";
     public final String OPTION_RETURNBOOK__SUCCESS_RETURN = "return a book successfully";
-    public final String OPTION_RETURNBOOK__UNSUCCESS_RETURN = "return a book unsuccessfully, please try again";
+    public final String OPTION_RETURNBOOK__UNSUCCESS_RETURN = "The book name is not correct.";
     public final String ENDING__END_MES = "Thanks!";
 }
