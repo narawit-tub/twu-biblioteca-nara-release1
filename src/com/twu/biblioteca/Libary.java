@@ -38,4 +38,18 @@ public class Libary {
 
         return (checkedOutBook != null) ? checkedOutBook : null;
     }
+
+    public Book returnBook(String bookName) {
+        Book returnedBook = null;
+
+        for (Book book : books) {
+            if (book.getBookName().equals(bookName)) {
+                returnedBook = book;
+                book.setAvailable(true);
+                break;
+            }
+        }
+
+        return returnedBook;
+    }
 }

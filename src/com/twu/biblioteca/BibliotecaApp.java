@@ -75,6 +75,14 @@ public class BibliotecaApp {
                     }
                     break;
                 case "4":
+                    System.out.print(userMessage.OPTION_RETURNBOOK__ASK_THE_NAME_OF_BOOK_TO_RETURN);
+                    userInput = in.nextLine();
+                    Book returnedBook = libary.returnBook(userInput);
+                    if (returnedBook != null) {
+                        System.out.print(userMessage.OPTION_RETURNBOOK__SUCCESS_RETURN + "\n");
+                    } else {
+                        System.out.print(userMessage.OPTION_RETURNBOOK__UNSUCCESS_RETURN + "\n");
+                    }
                     break;
                 default:
                     System.out.print("\n" + userMessage.OPTIONS__INCORRECT_OPTION_WARNING + "\n");

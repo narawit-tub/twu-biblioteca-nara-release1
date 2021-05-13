@@ -1,7 +1,6 @@
 package com.twu.biblioteca;
 
-public class Book {
-
+public class Book implements Comparable<Book>{
 
     private String author;
     private String pullicationYear;
@@ -37,5 +36,10 @@ public class Book {
 
     public String getInformationDetail() {
         return String.format("%s (%s) by %s - %s", this.getBookName(), this.getPullicationYear(), this.getAuthor(), this.isAvailable ? "available" : "not available");
+    }
+
+    @Override
+    public int compareTo(Book o) {
+        return 0;
     }
 }
