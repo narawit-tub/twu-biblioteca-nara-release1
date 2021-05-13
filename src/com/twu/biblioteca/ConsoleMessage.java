@@ -17,9 +17,9 @@ public class ConsoleMessage {
             "\n- Luster" +
             "\n- Aftershocks";
     public final String OPTION_SHOW_LIST_OF_BOOK_IN_DETAIL = "-- List of books in detail --" +
-            "\n- Klara and the Sun (2017) - by Kazuo Ishiguro" +
-            "\n- Luster (2020) - by Raven Leilani" +
-            "\n- Aftershocks (2018) - by Nadia Owusu";
+            "\n- Klara and the Sun (2017) by Kazuo Ishiguro - available" +
+            "\n- Luster (2020) by Raven Leilani - available" +
+            "\n- Aftershocks (2018) by Nadia Owusu - available";
     public final String OPTION_CHECKOUT__ASK_THE_NAME_OF_BOOK_TO_CHECKOUT = "name of book: ";
     public final String OPTION_CHECKOUT__SUCCESS_CHECKOUT_MES = "checkout successful!";
     public final String OPTION_CHECKOUT__UNSUCCESS_CHECKOUT_MES = "checkout unsuccessful! please re-type the book name.";

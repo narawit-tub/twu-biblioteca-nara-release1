@@ -6,12 +6,13 @@ public class Book {
     private String author;
     private String pullicationYear;
     private String bookName;
-
+    private Boolean isAvailable;
 
     public Book(String bookName, String author, String pullicationYear) {
         this.author = author;
         this.pullicationYear = pullicationYear;
         this.bookName = bookName;
+        this.isAvailable = true;
     }
 
     public String getAuthor() {
@@ -27,6 +28,6 @@ public class Book {
     }
 
     public String getInformationDetail() {
-        return String.format("%s (%s) - by %s", this.getBookName(), this.getPullicationYear(), this.getAuthor());
+        return String.format("%s (%s) by %s - %s", this.getBookName(), this.getPullicationYear(), this.getAuthor(), this.isAvailable ? "available" : "not available");
     }
 }

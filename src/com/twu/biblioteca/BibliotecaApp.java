@@ -52,14 +52,14 @@ public class BibliotecaApp {
             switch (userInput) {
                 case "1":
                     System.out.print("\n-- List of books --");
-                    for (Book book: libary.getBooks()){
+                    for (Book book: libary.getBooksList()){
                         System.out.print(String.format("\n- %s", book.getBookName()));
                     }
                     System.out.print("\n");
                     break;
                 case "2":
                     System.out.print("\n-- List of books in detail --");
-                    for (Book book: libary.getBooks()){
+                    for (Book book: libary.getBooksList()){
                         System.out.print(String.format("\n- %s", book.getInformationDetail()));
                     }
                     System.out.print("\n");

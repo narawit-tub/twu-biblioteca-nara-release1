@@ -24,7 +24,7 @@ public class ExampleTest {
     public ByteArrayInputStream inputBytes;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         userMessage = new ConsoleMessage();
         outputBytes = new ByteArrayOutputStream();
         outputConsole = System.out;
@@ -39,7 +39,7 @@ public class ExampleTest {
     }
 
     @After
-    public void tearDown(){
+    public void tearDown() {
         System.setOut(outputConsole);
         System.setIn(inputConsole);
     }
@@ -135,7 +135,7 @@ public class ExampleTest {
     }
 
     @Test
-    public void ViewAListOfBooks(){
+    public void ViewAListOfBooks() {
         // Given
         String userKeyboardInput = new StringBuilder()
                 .append("menu\n")
@@ -162,7 +162,7 @@ public class ExampleTest {
     }
 
     @Test
-    public void ViewAListOfBooksInDetail(){
+    public void ViewAListOfBooksInDetail() {
         // Given
         String userKeyboardInput = new StringBuilder()
                 .append("menu\n")
@@ -218,7 +218,7 @@ public class ExampleTest {
 
         // Then
         assertEquals(String.format(expectedConsoleResult), outputBytes.toString());
-        assertEquals (Integer.valueOf(2), libary.getNumberOfBooks());
+        assertEquals(Integer.valueOf(2), libary.getNumberOfBooks());
     }
 
     @Test
@@ -251,6 +251,7 @@ public class ExampleTest {
 
         // Then
         assertEquals(String.format(expectedConsoleResult), outputBytes.toString());
-        assertEquals (Integer.valueOf(3), libary.getNumberOfBooks());
+        assertEquals(Integer.valueOf(3), libary.getNumberOfBooks());
+    }
     }
 }

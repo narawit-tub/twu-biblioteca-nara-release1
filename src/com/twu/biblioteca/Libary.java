@@ -3,31 +3,31 @@ package com.twu.biblioteca;
 import java.util.ArrayList;
 
 public class Libary {
-    private ArrayList<Book> books;
+    private ArrayList<Book> booksList;
 
     Libary(ArrayList books){
-        this.books = books;
+        this.booksList = books;
     }
 
     public Integer getNumberOfBooks() {
-        return books.toArray().length;
+        return booksList.toArray().length;
     }
 
-    public ArrayList<Book> getBooks() {
-        return books;
+    public ArrayList<Book> getBooksList() {
+        return booksList;
     }
 
     public Book checkoutBook(String bookName) {
         Book checkedOutBook = null;
 
-        for (Book book : books) {
+        for (Book book : booksList) {
             if (book.getBookName().equals(bookName)) {
                 checkedOutBook = book;
                 break;
             }
         }
 
-        books.remove(checkedOutBook);
+        booksList.remove(checkedOutBook);
         return (checkedOutBook != null) ? checkedOutBook : null;
     }
 }
