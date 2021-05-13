@@ -14,12 +14,19 @@ public class BibliotecaApp {
     public static void getMainMenu(Scanner in) {
         ConsoleMessage userMessage = new ConsoleMessage();
         System.out.print(userMessage.STARTING_ASK_TO_CONINUE);
-        String userInput = in.nextLine();
         String[] options = new String[] {"menu"};
+        String userInput;
 
-        if (!Arrays.asList(options).contains(userInput)) {
-            System.out.print("\n" + userMessage.OPTIONS__INCORRECT_OPTION_WARNING + "\n");
-        } else System.out.print("\n" + userMessage.OPTIONS__SHOW_AVAILIABLE_OPTIONS + "\n\n");
+        while(true) {
+            userInput = in.nextLine();
+            if (!Arrays.asList(options).contains(userInput)) {
+                System.out.print("\n" + userMessage.OPTIONS__INCORRECT_OPTION_WARNING + "\n");
+            } else {
+                System.out.print("\n" + userMessage.OPTIONS__SHOW_AVAILIABLE_OPTIONS + "\n\n");
+                break;
+            }
+        }
+
     }
 
     public static void processLibaryOperation(Scanner in, Libary libary){

@@ -8,7 +8,7 @@ public class ConsoleMessage {
             "\n3. Check out book" +
             "\n4. Return a book";
     public final String OPTIONS__ASK_FOR_A_OPTION = "Choose 1 to 4 or \'quit\': ";
-    public final String OPTIONS__INCORRECT_OPTION_WARNING = "Sorry, it isn\'t correct option. please try again.\n";
+    public final String OPTIONS__INCORRECT_OPTION_WARNING = "Sorry, it isn\'t correct option. please try again.";
     public final String OPTION_SHOW_LIST_OF_BOOK = "-- List of books --" +
             "\n- Klara and the Sun" +
             "\n- Luster" +
